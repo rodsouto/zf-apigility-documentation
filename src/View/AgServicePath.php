@@ -19,12 +19,12 @@ class AgServicePath extends AbstractHelper
      * @param  Operation $operation
      * @return string
      */
-    public function __invoke(Service $service, Operation $operation)
+    public function __invoke(Service $service)
     {
         $route = $service->getRoute();
         $routeIdentifier = $service->getRouteIdentifierName();
-        $entityOps = $service->getEntityOperations();
-        if (empty($routeIdentifier) || empty($entityOps)) {
+
+        if (empty($routeIdentifier)) {
             return $route;
         }
 
